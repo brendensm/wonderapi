@@ -83,7 +83,7 @@ Note that queries for mortality and births statistics from the National
 Vital Statistics System cannot limit or group results by any location
 field, such as Region, Division, State or County, or Urbanization
 (urbanization categories map to specific geographic counties). See:
-<https://wonder.cdc.gov/wonder/help/WONDER-API.html> for more
+<https://wonder.cdc.gov/wonder/help/wonder-api.html> for more
 information.
 
 ### Example
@@ -150,9 +150,9 @@ Queries are composed of parameter name-value pairs. Setting up a query
 without assistance is complex because the query must be submitted as an
 .xml file with a long list of required parameters, such as [here
 (Example
-1)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example1-req.xml)
+1)](https://wonder.cdc.gov/wonder/help/api-examples/D76_Example1-req.xml)
 and [here (Example
-2)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example2-req.xml).
+2)](https://wonder.cdc.gov/wonder/help/api-examples/D76_Example2-req.xml).
 The point of the package is to prevent your having to create requests in
 this form. The code for converting R lists to xml and making the actual
 query is borrowed from the [`wondr`
@@ -173,7 +173,7 @@ each dataset. They may be accessed quickly by typing:
 in the console, or searching for “`codebook`” in the Help window. The
 codebooks are an important contribution of the package and are not
 provided by the CDC. They are generated automatically by [this
-script](https://github.com/socdataR/wonderapi/blob/develop/R/make_codebook_vignette.R),
+script](https://github.com/socdataR/wonderapi/blob/master/R/make_codebook_vignette.R),
 which scrapes the CDC Wonder web interface form, and displays parameter
 names and values in human readable form. The benefit of this method is
 the ability to quickly produce and update codebook vignettes that
@@ -198,9 +198,9 @@ on default query lists. Each default query is set to request a single
 Group By Results parameter, generally set to `"Year"`. It is set to
 request the Measures that are listed as default Measures on the web
 interface (i.e. `Births` for [the Births
-dataset](https://wonder.cdc.gov/controller/datarequest/D76); `Deaths`,
+dataset](https://wonder.cdc.gov/natality-current.html); `Deaths`,
 `Population` and `Crude Rate` for the [Detailed Mortality
-dataset](https://wonder.cdc.gov/controller/datarequest/D76).) To see the
+dataset](https://wonder.cdc.gov/ucd-icd10.html).) To see the
 default settings, perform a query request without specifying a
 querylist:
 
