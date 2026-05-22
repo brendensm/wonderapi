@@ -1,5 +1,8 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^\.DS_Store$
+^\.gitignore$
+^LICENSE\.md$
 images/
 vignettes/IntroVignette_cache/
 readme.html

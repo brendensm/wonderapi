@@ -11,7 +11,7 @@ Description: Simplifies the process of formulating CDC Wonder API query
 URL: https://github.com/socdataR/wonderapi
 BugReports: https://github.com/socdataR/wonderapi/issues
 Depends:
-    R (>= 3.3.2)
+    R (>= 3.5)
 Imports:
     dplyr,
     httr,
@@ -31,7 +31,7 @@ Suggests:
     rmarkdown,
     testthat
 VignetteBuilder: knitr
-License: GPL
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.1
