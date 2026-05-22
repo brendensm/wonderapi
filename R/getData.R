@@ -241,9 +241,14 @@ label_to_code <- function(list_with_labels, dbcode) {
     lookup$code <- stringr::str_remove_all(lookup$code, "(?<=[a-z])D.*$")
 
     for (i in seq_along(list_with_labels)) {
-        # taking first one in case there are multiple matches
-        # (if no matches, [1] has the effect of turning nameindex to NA)
-        nameindex <- which(lookup$label == list_with_labels[[i]][[1]])[1]
+        # When a label matches multiple rows, prefer limit variables (D...)
+        # or measures (M...) over output options (O_...). Fixes issue #2:
+        # e.g. "ICD-10 113 Cause List" matches both O_ucd and D76.V4 — the
+        # latter is the actual filter parameter the user intended.
+        matches <- which(lookup$label == list_with_labels[[i]][[1]])
+        preferred <- matches[grepl("^[DM]", lookup$code[matches])]
+        nameindex <- if (length(preferred) > 0) preferred[1] else matches[1]
+        if (length(nameindex) == 0) nameindex <- NA  # no matches
         if (!is.na(nameindex)) {   # label found for parameter name
                 code <- lookup$code[nameindex]
                 precode <- substring(code, 1, 1)
