@@ -20,7 +20,12 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Joyce Robbins \email{joycerobbins1@gmail.com}
+\strong{Maintainer}: Brenden Smith \email{brendensmithmi@gmail.com}
+
+Other contributors:
+\itemize{
+  \item Joyce Robbins \email{joycerobbins1@gmail.com} [contributor]
+}
 
 }
 \keyword{internal}
